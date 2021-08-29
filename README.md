@@ -1,8 +1,8 @@
-# color-wander
+# Custom Color Wander
 
-Generative artwork in node/browser based on a seeded random.
+Custom Color Wander is an update on Matt's existing library. I found it highly appealing but the code was dysfunctional and a lot of things didn't work. I have cleaned up the bits and made it functional for other applications.
 
-Blog post and more details:
+Matt's blog post and more details:
 
 [Generative Art with Node.js and Canvas](http://mattdesl.svbtle.com/generative-art-with-nodejs-and-canvas)
 
@@ -30,31 +30,24 @@ You can download some of these as lossless PNG [here](https://www.dropbox.com/sh
 ## Usage
 
 ```sh
-git clone https://github.com/mattdesl/color-wander.git
+git clone https://github.com/PySaqib/custom-color-wander.git
 cd color-wander
-npm install
+yarn install
 ```
 
 To run the browser experience:
 
 ```sh
-npm run start
+yarn start
 ```
 
-When you find a seed you like, you can render it as a high-resolution (2560x1440) print. The following will render a PNG into the `output/` folder.
+The image generating renderer wasn't functional so I have excluded it in this repository. However, you can actually send a seed as parameter in this version.
 
 ```sh
-node print [seed]
+http://localhost/?seed=123
+http://localhost/?seed=456
 ```
-
-Example:
-
-```sh
-node print 180423
-```
-
-> *Note:* For this experiment, the Node output resolution is currently the same as the browser canvas. Typically this approach, using `node-canvas`, is only worthwhile for much larger canvas resolutions.
 
 ## License
 
-The source code is licensed under MIT, the actual design/visuals/concept/artwork is licensed under [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). If you need a more specific license for commercial reasons, please open a new issue to discuss it with me.
+The source code is licensed under MIT, the actual design/visuals/concept/artwork is licensed under [Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International](https://creativecommons.org/licenses/by-nc-nd/4.0/). If you need a more specific license for commercial reasons, please open a new issue to discuss it with Matt.
