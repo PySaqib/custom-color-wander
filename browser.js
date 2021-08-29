@@ -16,6 +16,8 @@ var seedText = document.querySelector('.seed-text');
 
 var isIOS = /(iPad|iPhone|iPod)/i.test(navigator.userAgent);
 
+import canvasToImage from 'canvas-to-image';
+
 if (isIOS) { // iOS bugs with full screen ...
   const fixScroll = () => {
     setTimeout(() => {
@@ -142,6 +144,22 @@ function letterbox (element, parent) {
 
 document.addEventListener('DOMContentLoaded', ()=> {
   
-  setTimeout(()=> console.log('hey'), 10000);
+  setTimeout(()=> {
+    
+    // canvasToImage('canvas');
+
+    console.log('done');
+
+  }, 10000);
+
+
+  setTimeout(()=> {
+
+
+  }, 5000);
   
-})
+});
+
+
+
+
