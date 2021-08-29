@@ -14,9 +14,16 @@ var loop = createLoop();
 var seedContainer = document.querySelector('.seed-container');
 var seedText = document.querySelector('.seed-text');
 
+const axios = require('axios');
+
+
+var clientSeed = null;
+
+
+
 var isIOS = /(iPad|iPhone|iPod)/i.test(navigator.userAgent);
 
-import canvasToImage from 'canvas-to-image';
+// import canvasToImage from 'canvas-to-image';
 
 if (isIOS) { // iOS bugs with full screen ...
   const fixScroll = () => {
@@ -46,6 +53,8 @@ var randomize = (ev) => {
 
   // Printing for debugging
   console.log(querySeed);
+
+  clientSeed = querySeed;
 
   // Loads the seed artwork
   reload(createConfig(querySeed));
@@ -146,23 +155,19 @@ document.addEventListener('DOMContentLoaded', ()=> {
   
   setTimeout(()=> {
     
-    canvasToImage('canvas');
-    // var dataURL = document.getElementById('canvas').toDataURL();
-    // console.log(dataURL);
+    var dataURL = document.getElementById('canvas').toDataURL();
+
+    axios.post('http://localhost:3000/upload/image', {
+      "base64image" : `${dataURL}`,
+      "seedNumber" : clientSeed
+    }).then((res)=>{
+      console.log(res);
+    }).catch((err)=> {
+      console.log(err);
+    });
     
-    // var base64Data = dataURL.replace(/^data:image\/png;base64,/, "");
 
-    // require("fs").writeFile("out.png", base64Data, 'base64', function(err) {
-    //   console.log(err);
-    // });
-
-  }, 5000);
-
-
-  setTimeout(()=> {
-
-
-  }, 5000);
+  }, 10000);
   
 });
 
