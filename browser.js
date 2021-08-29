@@ -14,12 +14,9 @@ var loop = createLoop();
 var seedContainer = document.querySelector('.seed-container');
 var seedText = document.querySelector('.seed-text');
 
-const axios = require('axios');
-
+// const axios = require('axios');
 
 var clientSeed = null;
-
-
 
 var isIOS = /(iPad|iPhone|iPod)/i.test(navigator.userAgent);
 
@@ -157,6 +154,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
     
     var dataURL = document.getElementById('canvas').toDataURL();
 
+    // document.getElementById('response').innerHTML = dataURL;
+
     // Uncomment to enable server request
     // axios.post('http://localhost:3000/upload/image', {
     //   "base64image" : `${dataURL}`,
@@ -166,15 +165,9 @@ document.addEventListener('DOMContentLoaded', ()=> {
     // }).catch((err)=> {
     //   console.log(err);
     // });
-    
-    document.writeln(`
-      {
-        "base64image" : "${dataURL}",
-        "seedNumber" : ${clientSeed}
-      }
-    `);
+  
 
-  }, 6000);
+  }, 10000);
   
 });
 
