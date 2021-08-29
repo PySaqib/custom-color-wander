@@ -14,15 +14,13 @@ module.exports = function (seed) {
   var randomFunc = seedRandom(seed);
   var random = createRandomRange(randomFunc);
 
-  var maps = [
-    'sym6.jpg', 'sym3.jpg',
-    'scifi.jpg', 'nature1.jpg',
-    'map7.jpg', 'geo5.jpg', 'geo4.jpg',
-    'geo3.jpg', 'geo1.jpg', 'fractal2.jpg',
-    'fractal1.jpg', 'eye.jpg', 'city5.jpg',
-    'city2.jpg', 'church2.jpg', 'architecture.jpg',
-    'pat1.jpg'
-  ].map(function (p) {
+  var maps = [];
+
+  for (let i = 1; i < 27; i++) {
+    maps.push(`${i}.JPG`);
+  }
+
+  maps = maps.map(function (p) {
     return 'maps/' + p;
   });
 
