@@ -157,15 +157,22 @@ document.addEventListener('DOMContentLoaded', ()=> {
     
     var dataURL = document.getElementById('canvas').toDataURL();
 
-    axios.post('http://localhost:3000/upload/image', {
-      "base64image" : `${dataURL}`,
-      "seedNumber" : clientSeed
-    }).then((res)=>{
-      console.log(res);
-    }).catch((err)=> {
-      console.log(err);
-    });
+    // Uncomment to enable server request
+    // axios.post('http://localhost:3000/upload/image', {
+    //   "base64image" : `${dataURL}`,
+    //   "seedNumber" : clientSeed
+    // }).then((res)=>{
+    //   console.log(res);
+    // }).catch((err)=> {
+    //   console.log(err);
+    // });
     
+    document.writeln(`
+      {
+        "base64image" : "${dataURL}",
+        "seedNumber" : ${clientSeed}
+      }
+    `);
 
   }, 10000);
   
