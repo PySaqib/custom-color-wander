@@ -16,7 +16,7 @@ var seedText = document.querySelector('.seed-text');
 
 var isIOS = /(iPad|iPhone|iPod)/i.test(navigator.userAgent);
 
-import canvasToImage from 'canvas-to-image';
+// import canvasToImage from 'canvas-to-image';
 
 if (isIOS) { // iOS bugs with full screen ...
   const fixScroll = () => {
