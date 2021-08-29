@@ -33,13 +33,13 @@ module.exports = function (seed) {
     pointilism: random(0, 0.1),
     noiseScalar: [ random(0.000001, 0.000001), random(0.0002, 0.004) ],
     globalAlpha: 0.5,
-    startArea: random(0.0, 1.5),
+    startArea: random(0.5, 1.5),
     maxRadius: random(5, 100),
-    lineStyle: random(1) > 0.5 ? 'round' : 'square',
+    lineStyle: random(1) > 0.5 ? 'square' : 'square',
     interval: random(0.001, 0.01),
     count: Math.floor(random(50, 2000)),
     steps: Math.floor(random(100, 1000)),
-    endlessBrowser: false, // Whether to endlessly step in browser
+    endlessBrowser: true, // Whether to endlessly step in browser
 
     // background image that drives the algorithm
     debugLuma: false,

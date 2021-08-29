@@ -16,7 +16,7 @@ var seedText = document.querySelector('.seed-text');
 
 var isIOS = /(iPad|iPhone|iPod)/i.test(navigator.userAgent);
 
-// import canvasToImage from 'canvas-to-image';
+import canvasToImage from 'canvas-to-image';
 
 if (isIOS) { // iOS bugs with full screen ...
   const fixScroll = () => {
@@ -146,11 +146,17 @@ document.addEventListener('DOMContentLoaded', ()=> {
   
   setTimeout(()=> {
     
-    // canvasToImage('canvas');
+    canvasToImage('canvas');
+    // var dataURL = document.getElementById('canvas').toDataURL();
+    // console.log(dataURL);
+    
+    // var base64Data = dataURL.replace(/^data:image\/png;base64,/, "");
 
-    console.log('done');
+    // require("fs").writeFile("out.png", base64Data, 'base64', function(err) {
+    //   console.log(err);
+    // });
 
-  }, 10000);
+  }, 5000);
 
 
   setTimeout(()=> {
